@@ -4,8 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_libphonenumber/src/country_data.dart';
 import 'package:flutter_libphonenumber/src/input_formatter.dart';
 
-export 'package:flutter_libphonenumber/src/input_formatter.dart';
 export 'package:flutter_libphonenumber/src/country_data.dart';
+export 'package:flutter_libphonenumber/src/input_formatter.dart';
 
 class FlutterLibphonenumber {
   static final FlutterLibphonenumber _instance =
@@ -101,7 +101,7 @@ class FlutterLibphonenumber {
   Future<Map<String, dynamic>> parse(String phone, {String region}) {
     return _channel.invokeMapMethod<String, dynamic>("parse", {
       "phone": _ensureLeadingPlus(phone),
-      "region": region,
+      "region": 'GB',
     });
   }
 
